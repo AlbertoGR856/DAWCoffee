@@ -22,8 +22,14 @@ public class Deposito {
 //    servir;
 //     comprobarDeposito;
 
-  
-   
+    public Deposito(int cantidadMax, int cantidadUmbral, int cantidadActual) {
+        this.cantidadMax = cantidadMax;
+        this.cantidadUmbral = cantidadUmbral;
+        this.cantidadActual = cantidadActual;
+    }
+    
+    
+
 
     
     
