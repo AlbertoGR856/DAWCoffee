@@ -11,9 +11,8 @@ package com.mycompany.coffeemaker;
  */
 public class Cafetera {
     
-    private int deposito;
-    private int interfaz;
-    private int monedero;
+    private Deposito deposito;
+    private Monedero monedero;
     private int tiposCafe;
     
     
