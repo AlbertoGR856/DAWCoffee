@@ -14,6 +14,7 @@ public class Deposito {
     private int cantidadMax;
     private int cantidadUmbral;
     private int cantidadActual;
+    private String contenido;
     
 //    Metodos
 //    contenido;
@@ -22,11 +23,13 @@ public class Deposito {
 //    servir;
 //     comprobarDeposito;
 
-    public Deposito(int cantidadMax, int cantidadUmbral, int cantidadActual) {
+    public Deposito(int cantidadMax, int cantidadUmbral, int cantidadActual, String contenido) {
         this.cantidadMax = cantidadMax;
         this.cantidadUmbral = cantidadUmbral;
         this.cantidadActual = cantidadActual;
+        this.contenido = contenido;
     }
+
     
     
 
