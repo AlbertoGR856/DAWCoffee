@@ -9,11 +9,6 @@ package com.mycompany.coffeemaker;
  *
  * @author usuario
  */
-public class Interfaz {
-    
-//    private int codProducto;
-//    private int cantidadComplemento;
-    private Cafetera cafetera;
-    private Administracion administracion;
+public class Prueba {
     
 }
