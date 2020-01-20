@@ -15,5 +15,27 @@ public class Interfaz {
 //    private int cantidadComplemento;
     private Cafetera cafetera;
     private Administracion administracion;
+
+    public Interfaz(Cafetera cafetera, Administracion administracion) {
+        this.cafetera = cafetera;
+        this.administracion = administracion;
+    }
+
+    public Cafetera getCafetera() {
+        return cafetera;
+    }
+
+    public void setCafetera(Cafetera cafetera) {
+        this.cafetera = cafetera;
+    }
+
+    public Administracion getAdministracion() {
+        return administracion;
+    }
+
+    public void setAdministracion(Administracion administracion) {
+        this.administracion = administracion;
+    }
+    
     
 }
