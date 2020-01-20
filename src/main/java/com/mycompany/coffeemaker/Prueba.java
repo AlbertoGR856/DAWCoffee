@@ -11,4 +11,6 @@ package com.mycompany.coffeemaker;
  */
 public class Prueba {
     
+   private Interfaz interfaz;
+    
 }
