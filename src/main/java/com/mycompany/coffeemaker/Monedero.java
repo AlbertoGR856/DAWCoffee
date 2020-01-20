@@ -10,11 +10,17 @@ package com.mycompany.coffeemaker;
  * @author usuario
  */
 public class Monedero {
-    
+
     private double saldoAcumulado;
     private double saldoCliente;
-    private double precios;
-    private int numeroVentas;
+//    private double precios;
+//    private int numeroVentas;
+
+    public Monedero(double saldoAcumulado, double saldoCliente, double precios, int numeroVentas) {
+        this.saldoAcumulado = saldoAcumulado;
+        this.saldoCliente = saldoCliente;
+
+    }
 
     public double getSaldoAcumulado() {
         return saldoAcumulado;
@@ -32,21 +38,4 @@ public class Monedero {
         this.saldoCliente = saldoCliente;
     }
 
-    public double getPrecios() {
-        return precios;
-    }
-
-    public void setPrecios(double precios) {
-        this.precios = precios;
-    }
-
-    public int getNumeroVentas() {
-        return numeroVentas;
-    }
-
-    public void setNumeroVentas(int numeroVentas) {
-        this.numeroVentas = numeroVentas;
-    }
-            
-    
 }
