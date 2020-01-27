@@ -38,4 +38,11 @@ public class Monedero {
         this.saldoCliente = saldoCliente;
     }
 
+    @Override
+    public String toString() {
+        return "Monedero{" + "saldoAcumulado=" + saldoAcumulado + ", saldoCliente=" + saldoCliente + '}';
+    }
+    
+    
+
 }
