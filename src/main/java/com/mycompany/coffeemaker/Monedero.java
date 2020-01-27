@@ -22,6 +22,16 @@ public class Monedero {
 
     }
 
+    public double meterDinero(double saldoAcumulado) {
+
+        this.saldoAcumulado = this.saldoAcumulado + saldoAcumulado;
+        return saldoAcumulado;
+
+    }
+    
+    
+    
+
     public double getSaldoAcumulado() {
         return saldoAcumulado;
     }
@@ -42,7 +52,5 @@ public class Monedero {
     public String toString() {
         return "Monedero{" + "saldoAcumulado=" + saldoAcumulado + ", saldoCliente=" + saldoCliente + '}';
     }
-    
-    
 
 }
