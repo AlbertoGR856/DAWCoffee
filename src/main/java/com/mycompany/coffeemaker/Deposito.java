@@ -30,6 +30,43 @@ public class Deposito {
         this.contenido = contenido;
     }
 
+    public int getCantidadMax() {
+        return cantidadMax;
+    }
+
+    public void setCantidadMax(int cantidadMax) {
+        this.cantidadMax = cantidadMax;
+    }
+
+    public int getCantidadUmbral() {
+        return cantidadUmbral;
+    }
+
+    public void setCantidadUmbral(int cantidadUmbral) {
+        this.cantidadUmbral = cantidadUmbral;
+    }
+
+    public int getCantidadActual() {
+        return cantidadActual;
+    }
+
+    public void setCantidadActual(int cantidadActual) {
+        this.cantidadActual = cantidadActual;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
+
+    @Override
+    public String toString() {
+        return "Deposito{" + "cantidadMax=" + cantidadMax + ", cantidadUmbral=" + cantidadUmbral + ", cantidadActual=" + cantidadActual + ", contenido=" + contenido + '}';
+    }
+
     
     
 
