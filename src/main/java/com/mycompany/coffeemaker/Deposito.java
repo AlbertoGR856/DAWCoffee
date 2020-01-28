@@ -61,7 +61,7 @@ public class Deposito {
     }
             
 
-    // Método que comprueba el deposito de la cafetera
+    // Método que comprueba el estado del deposito de la cafetera
     public String comprobarDeposito() {
         return "Deposito disponible=" + cantidadActual;
     }
