@@ -10,28 +10,28 @@ package com.mycompany.coffeemaker;
  * @author sandra
  */
 public enum TiposBebidas {
-        CAFE_SOLO(0, 001,0.80),
-    SOLO_LARGO(0, 002,0.90),
-    SOLO_CON_LECHE(0, 003,1.10),
-    CORTADO(0, 004,1),
-    CAFE_SOLO_DESCAFEINADO(0, 102,0.80),
-    SOLO_LARGO_DESCAFEINADO(0, 102,0.90),
-    SOLO_CON_LECHE_DESCAFEINADO(0, 103,1.10),
-    CORTADO_DESCAFEINADO(0, 104,1),
-    CHOCOLATE(0, 201,1.40),
-    LECHE_FRIA(0, 301,0.50),
-    LECHE_CALIENTE(0, 302,0.50);
+    CAFE_SOLO(0, 001, 0.80),
+    SOLO_LARGO(0, 002, 0.90),
+    SOLO_CON_LECHE(0, 003, 1.10),
+    CORTADO(0, 004, 1),
+    CAFE_SOLO_DESCAFEINADO(0, 102, 0.80),
+    SOLO_LARGO_DESCAFEINADO(0, 102, 0.90),
+    SOLO_CON_LECHE_DESCAFEINADO(0, 103, 1.10),
+    CORTADO_DESCAFEINADO(0, 104, 1),
+    CHOCOLATE(0, 201, 1.40),
+    LECHE_FRIA(0, 301, 0.50),
+    LECHE_CALIENTE(0, 302, 0.50);
 
     // Sólo van a haber tres valores de cantidad 0-Ninguna, 1-Poco, 2-Mucha
-    private int cantidadComplemento; 
-    
+    private int cantidadComplemento;
+
     // Los códigos de producto son de 3 digitos y no van a poder ser cambiados.
     // Si el código empiza por 0 se tratará de un café
     // Si empieza por 1 se tratará de un café descafeinado
     // Si empiza por 2 se tratará de un chocolate
     // Y si empieza por 3 se tratará de una leche
     private int codBebida;
-    
+
     // El precio de las bebidas vendrán incluidas.
     private double precio;
 
@@ -64,7 +64,5 @@ public enum TiposBebidas {
     public double getPrecio() {
         return precio;
     }
-    
-    
-    
+
 }

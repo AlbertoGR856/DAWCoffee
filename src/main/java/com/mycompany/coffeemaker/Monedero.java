@@ -16,10 +16,7 @@ public class Monedero {
 //    private double precios;
 //    private int numeroVentas;
 
-    public Monedero(double saldoAcumulado, double saldoCliente, double precios, int numeroVentas) {
-        this.saldoAcumulado = saldoAcumulado;
-        this.saldoCliente = saldoCliente;
-
+    public Monedero() {
     }
 
     // Método que devuelve la cantidad de dinero introducida por el cliente

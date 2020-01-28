@@ -15,6 +15,7 @@ public class Interfaz {
 //    private int cantidadComplemento;
     private Cafetera cafetera;
     private Administracion administracion;
+    private TiposBebidas bebidas;
 
     public Interfaz(Cafetera cafetera, Administracion administracion) {
         this.cafetera = cafetera;

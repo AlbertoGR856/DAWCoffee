@@ -14,7 +14,6 @@ public class Deposito {
     private int cantidadMax;
     private int cantidadUmbral;
     private int cantidadActual;
-    private String contenido;
 
 //    Metodos
 //    devolverContenido;
@@ -22,11 +21,10 @@ public class Deposito {
 //    rellenar;
 //    servir;
 //     comprobarDeposito;
-    public Deposito(int cantidadMax, int cantidadUmbral, int cantidadActual, String contenido) {
+    public Deposito(int cantidadMax, int cantidadUmbral, int cantidadActual) {
         this.cantidadMax = cantidadMax;
         this.cantidadUmbral = cantidadUmbral;
         this.cantidadActual = cantidadActual;
-        this.contenido = contenido;
     }
 
     // Método que devuelve que si se vacia el deposito al llegar a la cantidadMax en caso contrario
