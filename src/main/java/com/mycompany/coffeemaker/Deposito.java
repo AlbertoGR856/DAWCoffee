@@ -41,23 +41,25 @@ public class Deposito {
         }
 
     }
-    
-    
+
     // Método que devuelve que si se llena el deposito al llegar a la cantidadumbral en caso contrario
     // el deposito se llenaria.
-    
-     public boolean llenar(int cantidadActual){
-    
-        if(cantidadActual > cantidadUmbral){
-        return false;
-        }
-        else{
-        cantidadActual+=cantidadActual;
-        return true;
+    public boolean llenar(int cantidadActual) {
+
+        if (cantidadActual > cantidadUmbral) {
+            return false;
+        } else {
+            cantidadActual += cantidadActual;
+            return true;
         }
 
-     }
-        
+    }
+
+    // Método que comprueba el deposito de la cafetera
+    public String comprobarDeposito() {
+        return "Deposito disponible=" + cantidadActual;
+    }
+
     public int getCantidadMax() {
         return cantidadMax;
     }
