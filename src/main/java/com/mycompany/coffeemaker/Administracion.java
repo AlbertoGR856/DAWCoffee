@@ -13,5 +13,20 @@ public class Administracion {
     
     private int usuario;
     private int contraseña;
+
+    public Administracion(int usuario, int contraseña) {
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+    }
+
+    public int getUsuario() {
+        return usuario;
+    }
+
+    public int getContraseña() {
+        return contraseña;
+    }
+    
+    
     
 }
