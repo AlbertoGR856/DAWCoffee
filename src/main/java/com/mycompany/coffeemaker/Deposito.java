@@ -59,6 +59,11 @@ public class Deposito {
     public String comprobarDeposito() {
         return "Deposito disponible=" + cantidadActual;
     }
+    
+    // Método que sirve el cafe restandolo a la cantidad actual del deposito
+     public void servir(String contenido) {
+        this.cantidadActual -= Math.min(cantidadActual, cantidadMax);
+    }
 
     public int getCantidadMax() {
         return cantidadMax;
