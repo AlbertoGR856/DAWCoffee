@@ -21,8 +21,7 @@ public class Monedero {
         this.saldoCliente = saldoCliente;
 
     }
-    
-    
+
     // Método que devuelve la cantidad de dinero introducida por el cliente
     public double meterDinero(double saldoCliente) {
 
@@ -30,13 +29,12 @@ public class Monedero {
         return saldoAcumulado;
 
     }
-    
+
     //Método que evalua si se tiene suficiente dinero, con respecto al que quiere sacar, en caso afirmativo 
     // se resta el saldoAcumulado del saldoCLiente, en caso contrario se emite un mensaje indicando 
     // que se le devuelve el saldoAcumulado
-
     public void sacarDinero(double saldoAcumulado) {
-        
+
         if (this.saldoAcumulado >= saldoCliente) {
             this.saldoAcumulado = this.saldoAcumulado - saldoCliente;
         } else {
