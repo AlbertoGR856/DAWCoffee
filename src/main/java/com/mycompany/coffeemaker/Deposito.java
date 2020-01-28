@@ -10,44 +10,54 @@ package com.mycompany.coffeemaker;
  * @author usuario
  */
 public class Deposito {
-    
+
     private int cantidadMax;
     private int cantidadUmbral;
     private int cantidadActual;
     private String contenido;
-    
+
 //    Metodos
 //    contenido;
 //    vaciar;
 //    rellenar;
 //    servir;
 //     comprobarDeposito;
-
     public Deposito(int cantidadMax, int cantidadUmbral, int cantidadActual, String contenido) {
         this.cantidadMax = cantidadMax;
         this.cantidadUmbral = cantidadUmbral;
         this.cantidadActual = cantidadActual;
         this.contenido = contenido;
     }
-    
-    
-    // Método que devuelve si se vacia el deposito al llegar a la cantidadMax en caso contrario
+
+    // Método que devuelve que si se vacia el deposito al llegar a la cantidadMax en caso contrario
     // se vacia.
-    public boolean vaciar(int cantidadActual){
-    
-        if(cantidadActual>cantidadMax){
-        return false;
+    public boolean vaciar(int cantidadActual) {
+
+        if (cantidadActual > cantidadMax) {
+            return false;
+        } else {
+            cantidadActual -= cantidadActual;
+            return true;
         }
-        else{
-        cantidadActual-=cantidadActual;
-        return true;
-        }
-    
+
     }
     
     
+    // Método que devuelve que si se llena el deposito al llegar a la cantidadumbral en caso contrario
+    // el deposito se llenaria.
     
+     public boolean llenar(int cantidadActual){
+    
+        if(cantidadActual > cantidadUmbral){
+        return false;
+        }
+        else{
+        cantidadActual+=cantidadActual;
+        return true;
+        }
 
+     }
+        
     public int getCantidadMax() {
         return cantidadMax;
     }
@@ -85,11 +95,4 @@ public class Deposito {
         return "Deposito{" + "cantidadMax=" + cantidadMax + ", cantidadUmbral=" + cantidadUmbral + ", cantidadActual=" + cantidadActual + ", contenido=" + contenido + '}';
     }
 
-    
-    
-
-
-    
-    
-    
 }
