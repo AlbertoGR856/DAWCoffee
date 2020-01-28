@@ -21,7 +21,9 @@ public class Monedero {
         this.saldoCliente = saldoCliente;
 
     }
-
+    
+    
+    // Método que devuelve la cantidad de dinero introducida por el cliente
     public double meterDinero(double saldoCliente) {
 
         this.saldoCliente = this.saldoCliente + saldoAcumulado;
@@ -29,16 +31,23 @@ public class Monedero {
 
     }
     
+    //Método que evalua si se tiene suficiente dinero, con respecto al que quiere sacar, en caso afirmativo 
+    // se resta el saldoAcumulado del saldoCLiente, en caso contrario se emite un mensaje indicando 
+    // que se le devuelve el saldoAcumulado
+
     public void sacarDinero(double saldoAcumulado) {
-		//evalua si tiene suficiente dinero, con respecto al que quiere sacar, en caso afirmativo 
-		//resta el dinero solicitado del dinero disponible, en caso contrario se emite un mensaje indicando 
-                // que la cantidad no es suficiente
-		if(this.saldoAcumulado>=saldoCliente){
-			this.saldoAcumulado=this.saldoAcumulado-saldoCliente;
-		}else{
-			System.out.println("Se le devuelve "+saldoAcumulado);
-		}	
-	}
+        
+        if (this.saldoAcumulado >= saldoCliente) {
+            this.saldoAcumulado = this.saldoAcumulado - saldoCliente;
+        } else {
+            System.out.println("Se le devuelve " + saldoAcumulado);
+        }
+    }
+
+    // Método que devuelve el saldo disponible en la cafetera
+    public String consultarSaldoDisponible() {
+        return "Saldo disponible= " + saldoAcumulado;
+    }
 
     public double getSaldoAcumulado() {
         return saldoAcumulado;
