@@ -28,9 +28,6 @@ public class Monedero {
         return saldoAcumulado;
 
     }
-    
-    
-    
 
     public double getSaldoAcumulado() {
         return saldoAcumulado;
