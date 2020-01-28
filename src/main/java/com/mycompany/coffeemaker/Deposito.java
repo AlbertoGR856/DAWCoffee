@@ -29,6 +29,24 @@ public class Deposito {
         this.cantidadActual = cantidadActual;
         this.contenido = contenido;
     }
+    
+    
+    // Método que devuelve si se vacia el deposito al llegar a la cantidadMax en caso contrario
+    // se vacia.
+    public boolean vaciar(int cantidadActual){
+    
+        if(cantidadActual>cantidadMax){
+        return false;
+        }
+        else{
+        cantidadActual-=cantidadActual;
+        return true;
+        }
+    
+    }
+    
+    
+    
 
     public int getCantidadMax() {
         return cantidadMax;
