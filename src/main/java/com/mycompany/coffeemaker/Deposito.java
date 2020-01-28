@@ -17,7 +17,7 @@ public class Deposito {
     private String contenido;
 
 //    Metodos
-//    contenido;
+//    devolverContenido;
 //    vaciar;
 //    rellenar;
 //    servir;
@@ -54,6 +54,12 @@ public class Deposito {
         }
 
     }
+    
+    // Método que comprueba el contenido del deposito
+    public String devolverContenido(){
+        return this.contenido;
+    }
+            
 
     // Método que comprueba el deposito de la cafetera
     public String comprobarDeposito() {
