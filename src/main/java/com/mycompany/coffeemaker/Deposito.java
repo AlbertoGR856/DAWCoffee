@@ -44,7 +44,7 @@ public class Deposito {
     }
 
     // Método que indica si el contenido del depósito ha alcanzado el Umbral.
-    public boolean devolverContenido() {
+    public boolean indicador() {
         // Controlo que la cantidadActual sea menor o igual a la cantidadUmbral
         if (this.cantidadActual <= this.cantidadUmbral) {
             // Si es así, devuelve true.
@@ -60,18 +60,27 @@ public class Deposito {
         this.cantidadActual = this.cantidadMax;
     }
 
+    // Método get del atributo cantidadMax
     public int getCantidadMax() {
         return cantidadMax;
     }
 
+    // Método get del atributo cantidadUmbral
     public int getCantidadUmbral() {
         return cantidadUmbral;
     }
 
+    // Método get del atributo cantidadActual
     public int getCantidadActual() {
         return cantidadActual;
     }
+
+    // Método get del atributo nombre
+    public String getNombre() {
+        return nombre;
+    }
     
+    // Método toString()
     @Override
     public String toString() {
         return "El depósito de " + nombre + " tiene: cantidad umbral = " + cantidadUmbral + "gr, cantidad actual = " + cantidadActual +"gr, cantidad máxima = "+cantidadMax+"gr.";
