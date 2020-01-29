@@ -16,31 +16,20 @@ public class Interfaz {
 //    private int codProducto;
 //    private int cantidadComplemento;
     private Cafetera cafetera;
-    private Administracion administracion;
-    private TiposBebidas bebidas;
 
     private static Scanner teclado = new Scanner(System.in);
 
-    public Interfaz(Cafetera cafetera, Administracion administracion) {
+    public Interfaz(Cafetera cafetera) {
         this.cafetera = cafetera;
-        this.administracion = administracion;
-    }
-
-    public Cafetera getCafetera() {
-        return cafetera;
-    }
-
-    public Administracion getAdministracion() {
-        return administracion;
     }
 
     // Voy a hacer un menuInicial que sea el menu que se muestre cuando la máquina está en reposo
     public void menuInicial() {
         int solucion = 0;
         do {
-            System.out.println("Bienvenido+\n"
-                    + "------------------------+\n"
-                    + "1.Venta de productos+\n"
+            System.out.println("Bienvenido\n"
+                    + "------------------------\n"
+                    + "1.Venta de productos\n"
                     + "2.Administración de la cafetera");
             solucion = teclado.nextInt();
         } while (solucion > 0 && 3 < solucion);
@@ -80,12 +69,38 @@ public class Interfaz {
             // Guardo en contraseña la entrada por teclado
             contraseña = teclado.nextInt();
 
-            confirmacion = (usuario == administracion.getUsuario() && contraseña == administracion.getContraseña()) ? false : true;
-
+            // Hago una confirmación que será la que saqué al usuario del bucle
+            confirmacion = (usuario == cafetera.getAdministracion().getUsuario() && contraseña == cafetera.getAdministracion().getContraseña() || intentos > 0 && intentos < 3) ? false : true;
+            
             // Por si el usuario se equivoca sumo uno a la variable intentos.
             intentos++;
         } while (confirmacion);
-       
+        // Controlo que el código introducido sea correcto
+        if (usuario == cafetera.getAdministracion().getUsuario() && contraseña == cafetera.getAdministracion().getContraseña()) {
+            int solucion = 0;
+            do {
+                System.out.println("¿Qué quieres comprobar?\n"
+                        + "------------------------\n"
+                        + "1.Venta de productos\n"
+                        + "2.Comprobar estado general\n"
+                        + "3.Consultar saldo de ventas realizadas.\n"
+                        + "4.Rellenar depósitos.");
+                solucion = teclado.nextInt();
+            } while (solucion > 0 && 3 < solucion);
+
+            switch (solucion) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+        } else {
+            menuInicial();
+        }
     }
 
 }
