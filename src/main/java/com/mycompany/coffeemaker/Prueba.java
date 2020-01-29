@@ -12,14 +12,17 @@ package com.mycompany.coffeemaker;
 public class Prueba {
     
     public static void main(String[] args) {
-        Deposito depoCafe = new Deposito(15000, 7500, 15000, "Cafe");
-        Deposito depoDesca = new Deposito(15000, 7500, 15000, "Café descafeinado");
-        Deposito depoLeche = new Deposito(15000, 7500, 15000, "Leche en polvo");
-        Deposito depoChoco = new Deposito(15000, 7500, 15000, "Chocolate en polvo");
-        Deposito depoAgua = new Deposito(15000, 7500, 15000, "Agua");
-        Monedero monedero = new Monedero();
-        
+        Deposito depoCafe = new Deposito(15000, 7500, 15000);
+        Deposito depoDesca = new Deposito(15000, 7500, 15000);
+        Deposito depoLeche = new Deposito(15000, 7500, 15000);
+        Deposito depoChoco = new Deposito(15000, 7500, 15000);
+        Deposito depoAgua = new Deposito(15000, 7500, 15000);
+        Monedero monedero = new Monedero();      
         Cafetera maquina = new Cafetera(depoCafe, depoAgua, depoLeche, depoDesca, depoChoco, monedero);
+        Administracion admin = new Administracion(535,51932);  
+        Interfaz i1 = new Interfaz(maquina, admin);
+        
+        i1.menuInicial();
     }
     
 }
