@@ -12,17 +12,25 @@ package com.mycompany.coffeemaker;
 public class Cafetera {
 
     private Deposito depositoCafe, depositoAgua, depositoLeche, depositoDescafeinado, depositoChocolate;
-    private Monedero monedero;
+    private Monedero monedero;    
+    private Administracion administracion;
+    private TiposBebidas bebidas;
 
-    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate, Monedero monedero) {
+    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate, Monedero monedero, Administracion administracion) {
         this.depositoCafe = depositoCafe;
         this.depositoAgua = depositoAgua;
         this.depositoLeche = depositoLeche;
         this.depositoDescafeinado = depositoDescafeinado;
         this.depositoChocolate = depositoChocolate;
         this.monedero = monedero;
+        this.administracion = administracion;
     }
 
+    public Administracion getAdministracion() {
+        return administracion;
+    }
+
+    
     public Deposito getDepositoCafe() {
         return depositoCafe;
     }
