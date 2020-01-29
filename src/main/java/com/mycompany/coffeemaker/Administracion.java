@@ -27,6 +27,23 @@ public class Administracion {
         return contraseña;
     }
     
+    // Método que comprueba que el usuario que se le pasa por parámetro es correcto
+    public boolean comprobarUsuario(int usuario){
+        if (this.usuario == usuario){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
+    
+    // Método que comprueba que la contraseña que se le pasa por parámetro es correcto
+    public boolean comprobarContraseña(int contraseña){
+        if (this.contraseña == contraseña){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
 }
