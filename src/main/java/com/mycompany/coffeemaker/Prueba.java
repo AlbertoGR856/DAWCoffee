@@ -17,10 +17,10 @@ public class Prueba {
         Deposito depoLeche = new Deposito(15000, 7500, 15000);
         Deposito depoChoco = new Deposito(15000, 7500, 15000);
         Deposito depoAgua = new Deposito(15000, 7500, 15000);
-        Monedero monedero = new Monedero();      
-        Cafetera maquina = new Cafetera(depoCafe, depoAgua, depoLeche, depoDesca, depoChoco, monedero);
+        Monedero monedero = new Monedero();              
         Administracion admin = new Administracion(535,51932);  
-        Interfaz i1 = new Interfaz(maquina, admin);
+        Cafetera maquina = new Cafetera(depoCafe, depoAgua, depoLeche, depoDesca, depoChoco, monedero, admin);
+        Interfaz i1 = new Interfaz(maquina);
         
         i1.menuInicial();
     }
