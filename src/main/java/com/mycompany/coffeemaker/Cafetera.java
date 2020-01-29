@@ -13,11 +13,13 @@ public class Cafetera {
 
     private Deposito depositoCafe, depositoAgua, depositoLeche,
             depositoDescafeinado, depositoChocolate, depositoSacarina, depositoAzucar;
-    private Monedero monedero;    
     private Administracion administracion;
     private TiposBebidas bebidas;
+    private double saldoAcumulado;
+    private double saldoCliente;
+    private static int numVenta;
 
-    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate,Deposito depositoSacarina, Deposito depositoAzucar, Monedero monedero, Administracion administracion) {
+    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate, Deposito depositoSacarina, Deposito depositoAzucar, Administracion administracion) {
         this.depositoCafe = depositoCafe;
         this.depositoAgua = depositoAgua;
         this.depositoLeche = depositoLeche;
@@ -25,15 +27,22 @@ public class Cafetera {
         this.depositoChocolate = depositoChocolate;
         this.depositoSacarina = depositoSacarina;
         this.depositoAzucar = depositoAzucar;
-        this.monedero = monedero;
         this.administracion = administracion;
     }
+
+    public void venta(TiposBebidas bebida, Deposito deposito) {
+        this.saldoAcumulado += this.saldoCliente;
+        setSaldoCliente(getSaldoCliente() - bebida.getPrecio());
+        numVenta++;
+        
+        
+    }
+    
 
     public Administracion getAdministracion() {
         return administracion;
     }
 
-    
     public Deposito getDepositoCafe() {
         return depositoCafe;
     }
@@ -61,9 +70,25 @@ public class Cafetera {
     public Deposito getDepositoAzucar() {
         return depositoAzucar;
     }
-    
-    public Monedero getMonedero() {
-        return monedero;
+
+    public double getSaldoAcumulado() {
+        return saldoAcumulado;
+    }
+
+    private void setSaldoAcumulado(double saldoAcumulado) {
+        this.saldoAcumulado = saldoAcumulado;
+    }
+
+    public double getSaldoCliente() {
+        return saldoCliente;
+    }
+
+    private void setSaldoCliente(double saldoCliente) {
+        this.saldoCliente = saldoCliente;
+    }
+
+    public static int getNumVenta() {
+        return numVenta;
     }
 
     
