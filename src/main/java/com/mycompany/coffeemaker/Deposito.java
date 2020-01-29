@@ -74,10 +74,7 @@ public class Deposito {
     
     @Override
     public String toString() {
-        return "El depósito " + nombre + "tiene: \n"
-                + "Cantidad umbral: " + cantidadUmbral + "gr\n"
-                + "Cantidad actual: " + cantidadActual +"gr\n"
-                + "Cantidad máxima: "+cantidadMax+"gr.";
+        return "El depósito de " + nombre + " tiene: cantidad umbral = " + cantidadUmbral + "gr, cantidad actual = " + cantidadActual +"gr, cantidad máxima = "+cantidadMax+"gr.";
     }
 
 }

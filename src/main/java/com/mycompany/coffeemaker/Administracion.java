@@ -42,8 +42,7 @@ public class Administracion {
     // Método toString()
     @Override
     public String toString() {
-        return "Usuario: " + usuario + "\n"
-                + "Contraseña: " + contrasenia;
+        return "El usuario administrador es: " + usuario + " y la contraseña es: " + contrasenia+".";
     }
     
     
