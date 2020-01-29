@@ -36,9 +36,10 @@ public class Interfaz {
                 System.out.println("Bienvenido\n"
                         + "------------------------\n"
                         + "1.Venta de productos\n"
-                        + "2.Administración de la cafetera");
+                        + "2.Administración de la cafetera\n"
+                        + "3.Salir");
                 opcion = teclado.nextInt();
-            } while (!(opcion == 1 || opcion == 2));
+            } while (!(opcion == 1 || opcion == 2 || opcion == 3));
         } catch (InputMismatchException ime) {
             // Imprimo por pantalla un mensaje que le recomienda utilizar números
             System.out.println("Ese valor no es un número... prueba con un número.");
@@ -53,6 +54,8 @@ public class Interfaz {
                 // Si escoge la segunda opción irá al menú de administración de la cafetera.
                 menuAdministracion();
                 break;
+            case 3:
+                break;
         }
 
     }
@@ -60,6 +63,7 @@ public class Interfaz {
     // Voy a hacer un menu para las ventas que será llamado desde el menú inicial.
     private void menuVenta() {
         System.out.println("Introduce dinero: ");
+        menuInicial();
     }
 
     // Voy a hacer un menu para el administrador que será llamado desde el menú inicial.
@@ -134,12 +138,13 @@ public class Interfaz {
                     menuAdministracionOpcion2();
                     break;
                 case 3:
-                    System.out.println("Se han realizado un total de "+cafetera.getNumVenta()+" ventas y se ha recaudado un total de "+cafetera.getSaldoAcumulado()+"€.");
+                    System.out.println("Se han realizado un total de " + cafetera.getNumVenta() + " ventas y se ha recaudado un total de " + cafetera.getSaldoAcumulado() + "€.");
                     break;
                 case 4:
                     menuAdministracionOpcion4();
                     break;
             }
+            menuInicial();
         } else {
             menuInicial();
         }
@@ -153,7 +158,13 @@ public class Interfaz {
         String agua = (cafetera.getDepositoAgua().indicador()) ? ("\nEl depósito " + cafetera.getDepositoAgua().getNombre() + " debe ser rellenado.") : "";
         String azucar = (cafetera.getDepositoAzucar().indicador()) ? ("\nEl depósito " + cafetera.getDepositoAzucar().getNombre() + " debe ser rellenado.") : "";
         String sacarina = (cafetera.getDepositoSacarina().indicador()) ? ("\nEl depósito " + cafetera.getDepositoSacarina().getNombre() + " debe ser rellenado.") : "";
-        System.out.print(cafe + descafeinado + chocolate + leche + agua + azucar + sacarina);
+        // Si todos los depósitos están llenos, indicará que no hay que rellenarlos.
+        if (cafe.equals("") && descafeinado.equals("") && chocolate.equals("") && leche.equals("") && azucar.equals("") && sacarina.equals("")) {
+            System.out.println("Nigún depósito tiene que ser rellenado.");
+        } else {
+            // Si no, indicará que depósito hay que rellenar.
+            System.out.println(cafe + descafeinado + chocolate + leche + agua + azucar + sacarina);
+        }
     }
 
     private void menuAdministracionOpcion2() {
@@ -183,7 +194,7 @@ public class Interfaz {
                         + "6.Azúcar.\n"
                         + "7.Sacarina.");
                 opcion = teclado.nextInt();
-            } while (opcion >= 1 && 8 < opcion);
+            } while (opcion == 1 && 7 < opcion);
         } catch (InputMismatchException ime) {
             // Imprimo por pantalla un mensaje que le recomienda utilizar números
             System.out.println("Ese valor no es un número... prueba con un número.");
