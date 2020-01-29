@@ -134,6 +134,7 @@ public class Interfaz {
                     menuAdministracionOpcion2();
                     break;
                 case 3:
+                    System.out.println("Se han realizado un total de "+cafetera.getNumVenta()+" ventas y se ha recaudado un total de "+cafetera.getSaldoAcumulado()+"€.");
                     break;
                 case 4:
                     menuAdministracionOpcion4();

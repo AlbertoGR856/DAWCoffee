@@ -9,7 +9,7 @@ package com.mycompany.coffeemaker;
  *
  * @author usuario
  */
-public class Prueba {
+public class Main {
     
     public static void main(String[] args) {
         Deposito depoCafe = new Deposito(1500, 750, 1500,"café");
