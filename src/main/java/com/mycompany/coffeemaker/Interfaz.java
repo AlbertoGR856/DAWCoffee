@@ -126,6 +126,14 @@ public class Interfaz {
             // Hago un switch que dependiendo de la opcion que haya escogido el usuario, haga una cosa u otra.
             switch (opcion) {
                 case 1:
+                    String cafe = (cafetera.getDepositoCafe().indicador()) ? ("El depósito "+cafetera.getDepositoCafe().getNombre()+" debe ser rellenado.") : "";
+                    String descafeinado = (cafetera.getDepositoDescafeinado().indicador()) ? ("\nEl depósito "+cafetera.getDepositoDescafeinado().getNombre()+" debe ser rellenado.") : "";
+                    String chocolate = (cafetera.getDepositoChocolate().indicador()) ? ("\nEl depósito "+cafetera.getDepositoChocolate().getNombre()+" debe ser rellenado.") : "";
+                    String leche = (cafetera.getDepositoLeche().indicador()) ? ("\nEl depósito "+cafetera.getDepositoLeche().getNombre()+" debe ser rellenado.") : "";
+                    String agua = (cafetera.getDepositoAgua().indicador()) ? ("\nEl depósito "+cafetera.getDepositoAgua().getNombre()+" debe ser rellenado.") : "";
+                    String azucar = (cafetera.getDepositoAzucar().indicador()) ? ("\nEl depósito "+cafetera.getDepositoAzucar().getNombre()+" debe ser rellenado.") : "";
+                    String sacarina = (cafetera.getDepositoSacarina().indicador()) ? ("\nEl depósito "+cafetera.getDepositoSacarina().getNombre()+" debe ser rellenado.") : "";
+                    System.out.print(cafe+descafeinado+chocolate+leche+agua+azucar+sacarina);
                     break;
                     
                 // En esta opción mostrará el estado actual de los depósitos y el usuario y contraseña del administrador.
