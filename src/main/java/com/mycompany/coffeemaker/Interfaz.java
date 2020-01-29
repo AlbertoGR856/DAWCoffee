@@ -47,6 +47,7 @@ public class Interfaz {
 
         switch (solucion) {
             case 1:
+                menuVenta();
                 break;
             case 2:
                 menuAdministracion();
@@ -55,5 +56,14 @@ public class Interfaz {
 
     }
 
+    // Voy a hacer un menu para las ventas que será llamado desde el menú inicial.
+    private void menuVenta() {
+
+    }
+
+    // Voy a hacer un menu para el administrador que será llamado desde el menú inicial.
+    private void menuAdministracion() {
+       
+    }
 
 }
