@@ -59,6 +59,11 @@ public class Deposito {
     public void rellenarEntero() {
         this.cantidadActual = this.cantidadMax;
     }
+    
+    // Método que resta al depósito la cantidad que se va a necesitar para hacer una bebida.
+    public void servirBebida (int cantidad){
+        this.cantidadActual -= cantidad;
+    }
 
     // Método get del atributo cantidadMax
     public int getCantidadMax() {

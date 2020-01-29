@@ -30,12 +30,11 @@ public class Cafetera {
         this.administracion = administracion;
     }
 
-    public void venta(TiposBebidas bebida, Deposito deposito) {
+    // Este método permite vender una bebida
+    public void venta(TiposBebidas bebida) {
         this.saldoAcumulado += this.saldoCliente;
         setSaldoCliente(getSaldoCliente() - bebida.getPrecio());
-        numVenta++;
-        
-        
+        numVenta++;       
     }
     
 
@@ -73,10 +72,6 @@ public class Cafetera {
 
     public double getSaldoAcumulado() {
         return saldoAcumulado;
-    }
-
-    private void setSaldoAcumulado(double saldoAcumulado) {
-        this.saldoAcumulado = saldoAcumulado;
     }
 
     public double getSaldoCliente() {
