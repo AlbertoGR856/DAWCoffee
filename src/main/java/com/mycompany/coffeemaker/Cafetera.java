@@ -11,17 +11,20 @@ package com.mycompany.coffeemaker;
  */
 public class Cafetera {
 
-    private Deposito depositoCafe, depositoAgua, depositoLeche, depositoDescafeinado, depositoChocolate;
+    private Deposito depositoCafe, depositoAgua, depositoLeche,
+            depositoDescafeinado, depositoChocolate, depositoSacarina, depositoAzucar;
     private Monedero monedero;    
     private Administracion administracion;
     private TiposBebidas bebidas;
 
-    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate, Monedero monedero, Administracion administracion) {
+    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate,Deposito depositoSacarina, Deposito depositoAzucar, Monedero monedero, Administracion administracion) {
         this.depositoCafe = depositoCafe;
         this.depositoAgua = depositoAgua;
         this.depositoLeche = depositoLeche;
         this.depositoDescafeinado = depositoDescafeinado;
         this.depositoChocolate = depositoChocolate;
+        this.depositoSacarina = depositoSacarina;
+        this.depositoAzucar = depositoAzucar;
         this.monedero = monedero;
         this.administracion = administracion;
     }
@@ -51,6 +54,14 @@ public class Cafetera {
         return depositoChocolate;
     }
 
+    public Deposito getDepositoSacarina() {
+        return depositoSacarina;
+    }
+
+    public Deposito getDepositoAzucar() {
+        return depositoAzucar;
+    }
+    
     public Monedero getMonedero() {
         return monedero;
     }
