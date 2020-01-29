@@ -13,8 +13,6 @@ public class Monedero {
 
     private double saldoAcumulado;
     private double saldoCliente;
-//    private double precios;
-//    private int numeroVentas;
 
     public Monedero() {
     }

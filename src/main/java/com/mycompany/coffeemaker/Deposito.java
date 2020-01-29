@@ -15,12 +15,6 @@ public class Deposito {
     private int cantidadUmbral;
     private int cantidadActual;
 
-//    Metodos
-//    devolverContenido;
-//    vaciar;
-//    rellenar;
-//    servir;
-//     comprobarDeposito;
     public Deposito(int cantidadMax, int cantidadUmbral, int cantidadActual) {
         this.cantidadMax = cantidadMax;
         this.cantidadUmbral = cantidadUmbral;
