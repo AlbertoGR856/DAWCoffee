@@ -10,21 +10,14 @@ package com.mycompany.coffeemaker;
  * @author usuario
  */
 public class Administracion {
-    
+    // Creación de los atributos
     private int usuario;
-    private int contraseña;
+    private int contrasenia;
 
-    public Administracion(int usuario, int contraseña) {
+    // Constructor parametrizado
+    public Administracion(int usuario, int contrasenia) {
         this.usuario = usuario;
-        this.contraseña = contraseña;
-    }
-
-    public int getUsuario() {
-        return usuario;
-    }
-
-    public int getContraseña() {
-        return contraseña;
+        this.contrasenia = contrasenia;
     }
     
     // Método que comprueba que el usuario que se le pasa por parámetro es correcto
@@ -37,13 +30,22 @@ public class Administracion {
     }
     
     
-    // Método que comprueba que la contraseña que se le pasa por parámetro es correcto
-    public boolean comprobarContraseña(int contraseña){
-        if (this.contraseña == contraseña){
+    // Método que comprueba que la contrasenia que se le pasa por parámetro es correcto
+    public boolean comprobarContrasenia(int contrasenia){
+        if (this.contrasenia == contrasenia){
             return true;
         }else{
             return false;
         }
     }
+
+    // Método toString()
+    @Override
+    public String toString() {
+        return "Usuario: " + usuario + "\n"
+                + "Contraseña: " + contrasenia;
+    }
+    
+    
     
 }
