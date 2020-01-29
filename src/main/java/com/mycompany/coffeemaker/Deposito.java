@@ -52,20 +52,19 @@ public class Deposito {
         }
 
     }
-    
+
     // Método que comprueba el contenido del deposito
-    public String devolverContenido(){
-        return this.contenido;
+    public int devolverContenido() {
+        return this.cantidadActual;
     }
-            
 
     // Método que comprueba el estado del deposito de la cafetera
     public String comprobarDeposito() {
         return "Deposito disponible=" + cantidadActual;
     }
-    
+
     // Método que sirve el cafe restandolo a la cantidad actual del deposito
-     public void servir(String contenido) {
+    public void servir(String contenido) {
         this.cantidadActual -= Math.min(cantidadActual, cantidadMax);
     }
 
@@ -93,17 +92,9 @@ public class Deposito {
         this.cantidadActual = cantidadActual;
     }
 
-    public String getContenido() {
-        return contenido;
-    }
-
-    public void setContenido(String contenido) {
-        this.contenido = contenido;
-    }
-
     @Override
     public String toString() {
-        return "Deposito{" + "cantidadMax=" + cantidadMax + ", cantidadUmbral=" + cantidadUmbral + ", cantidadActual=" + cantidadActual + ", contenido=" + contenido + '}';
+        return "Deposito{" + "cantidadMax=" + cantidadMax + ", cantidadUmbral=" + cantidadUmbral + ", cantidadActual=" + cantidadActual + '}';
     }
 
 }
