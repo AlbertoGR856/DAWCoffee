@@ -39,7 +39,7 @@ public class Deposito {
                 this.cantidadActual += cantidad;
             }
         } else{
-            throw new IllegalArgumentException("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+            throw new IllegalArgumentException("Número negativo");
         }
     }
 

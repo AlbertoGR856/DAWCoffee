@@ -117,7 +117,7 @@ public class Interfaz {
                             + "3.Consultar saldo de ventas realizadas.\n"
                             + "4.Rellenar depósitos.");
                     opcion = teclado.nextInt();
-                } while (opcion >= 1 && 4 <= opcion);
+                } while (!(opcion == 1 || opcion == 2 || opcion == 3 || opcion == 4));
             } catch (InputMismatchException ime) {
                 // Imprimo por pantalla un mensaje que le recomienda utilizar números
                 System.out.println("Ese valor no es un número... prueba con un número.");
@@ -126,30 +126,17 @@ public class Interfaz {
             // Hago un switch que dependiendo de la opcion que haya escogido el usuario, haga una cosa u otra.
             switch (opcion) {
                 case 1:
-                    String cafe = (cafetera.getDepositoCafe().indicador()) ? ("El depósito "+cafetera.getDepositoCafe().getNombre()+" debe ser rellenado.") : "";
-                    String descafeinado = (cafetera.getDepositoDescafeinado().indicador()) ? ("\nEl depósito "+cafetera.getDepositoDescafeinado().getNombre()+" debe ser rellenado.") : "";
-                    String chocolate = (cafetera.getDepositoChocolate().indicador()) ? ("\nEl depósito "+cafetera.getDepositoChocolate().getNombre()+" debe ser rellenado.") : "";
-                    String leche = (cafetera.getDepositoLeche().indicador()) ? ("\nEl depósito "+cafetera.getDepositoLeche().getNombre()+" debe ser rellenado.") : "";
-                    String agua = (cafetera.getDepositoAgua().indicador()) ? ("\nEl depósito "+cafetera.getDepositoAgua().getNombre()+" debe ser rellenado.") : "";
-                    String azucar = (cafetera.getDepositoAzucar().indicador()) ? ("\nEl depósito "+cafetera.getDepositoAzucar().getNombre()+" debe ser rellenado.") : "";
-                    String sacarina = (cafetera.getDepositoSacarina().indicador()) ? ("\nEl depósito "+cafetera.getDepositoSacarina().getNombre()+" debe ser rellenado.") : "";
-                    System.out.print(cafe+descafeinado+chocolate+leche+agua+azucar+sacarina);
+                    menuAdministracionOpcion1();
                     break;
-                    
+
                 // En esta opción mostrará el estado actual de los depósitos y el usuario y contraseña del administrador.
                 case 2:
-                    System.out.println(cafetera.getAdministracion().toString());
-                    System.out.println(cafetera.getDepositoAgua().toString());
-                    System.out.println(cafetera.getDepositoAzucar().toString());
-                    System.out.println(cafetera.getDepositoCafe().toString());
-                    System.out.println(cafetera.getDepositoChocolate().toString());
-                    System.out.println(cafetera.getDepositoDescafeinado().toString());
-                    System.out.println(cafetera.getDepositoLeche().toString());
-                    System.out.println(cafetera.getDepositoSacarina().toString());
+                    menuAdministracionOpcion2();
                     break;
                 case 3:
                     break;
                 case 4:
+                    menuAdministracionOpcion4();
                     break;
             }
         } else {
@@ -157,4 +144,306 @@ public class Interfaz {
         }
     }
 
+    private void menuAdministracionOpcion1() {
+        String cafe = (cafetera.getDepositoCafe().indicador()) ? ("El depósito " + cafetera.getDepositoCafe().getNombre() + " debe ser rellenado.") : "";
+        String descafeinado = (cafetera.getDepositoDescafeinado().indicador()) ? ("\nEl depósito " + cafetera.getDepositoDescafeinado().getNombre() + " debe ser rellenado.") : "";
+        String chocolate = (cafetera.getDepositoChocolate().indicador()) ? ("\nEl depósito " + cafetera.getDepositoChocolate().getNombre() + " debe ser rellenado.") : "";
+        String leche = (cafetera.getDepositoLeche().indicador()) ? ("\nEl depósito " + cafetera.getDepositoLeche().getNombre() + " debe ser rellenado.") : "";
+        String agua = (cafetera.getDepositoAgua().indicador()) ? ("\nEl depósito " + cafetera.getDepositoAgua().getNombre() + " debe ser rellenado.") : "";
+        String azucar = (cafetera.getDepositoAzucar().indicador()) ? ("\nEl depósito " + cafetera.getDepositoAzucar().getNombre() + " debe ser rellenado.") : "";
+        String sacarina = (cafetera.getDepositoSacarina().indicador()) ? ("\nEl depósito " + cafetera.getDepositoSacarina().getNombre() + " debe ser rellenado.") : "";
+        System.out.print(cafe + descafeinado + chocolate + leche + agua + azucar + sacarina);
+    }
+
+    private void menuAdministracionOpcion2() {
+        System.out.println(cafetera.getAdministracion().toString());
+        System.out.println(cafetera.getDepositoAgua().toString());
+        System.out.println(cafetera.getDepositoAzucar().toString());
+        System.out.println(cafetera.getDepositoCafe().toString());
+        System.out.println(cafetera.getDepositoChocolate().toString());
+        System.out.println(cafetera.getDepositoDescafeinado().toString());
+        System.out.println(cafetera.getDepositoLeche().toString());
+        System.out.println(cafetera.getDepositoSacarina().toString());
+    }
+
+    private void menuAdministracionOpcion4() {
+        int opcion = 0;
+        // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+        try {
+            // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+            do {
+                System.out.println("¿Qué depósito quieres rellenar?\n"
+                        + "------------------------\n"
+                        + "1.Café\n"
+                        + "2.Descafeinado\n"
+                        + "3.Chocolate.\n"
+                        + "4.Leche.\n"
+                        + "5.Agua.\n"
+                        + "6.Azúcar.\n"
+                        + "7.Sacarina.");
+                opcion = teclado.nextInt();
+            } while (opcion >= 1 && 8 < opcion);
+        } catch (InputMismatchException ime) {
+            // Imprimo por pantalla un mensaje que le recomienda utilizar números
+            System.out.println("Ese valor no es un número... prueba con un número.");
+        }
+
+        // Una vez escoge una de las opciones hago un switch
+        switch (opcion) {
+            // En el primer caso hará:
+            case 1:
+                // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+                try {
+                    // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+                    do {
+                        System.out.println("¿Cómo lo quieres rellenar?\n"
+                                + "------------------------\n"
+                                + "1.Con una cantidad específica.\n"
+                                + "2.Entero.");
+                        opcion = teclado.nextInt();
+                    } while (!(opcion == 1 || opcion == 2));
+                } catch (InputMismatchException ime) {
+                    // Imprimo por pantalla un mensaje que le recomienda utilizar números
+                    System.out.println("Ese valor no es un número... prueba con un número.");
+                }
+                // Después del bucle haré un switch
+                switch (opcion) {
+                    // En el primer caso rellenará una cantidad específica el depósito del caso 1 del anterior bucle
+                    // en el que pregunta que depósito quiere utilizar.
+                    case 1:
+                        System.out.println("¿Cúanto?");
+                        int cantidad = teclado.nextInt();
+                        try {
+                            cafetera.getDepositoCafe().rellenarCantidad(cantidad);
+                        } catch (IllegalArgumentException iae) {
+                            System.out.println("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+                        }
+
+                        break;
+
+                    // En el primer caso rellenará entero el depósito del caso 1 del anterior bucle en el que 
+                    // pregunta que depósito quiere utilizar.
+                    case 2:
+                        cafetera.getDepositoCafe().rellenarEntero();
+                        break;
+                }
+                break;
+            case 2:
+                // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+                try {
+                    // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+                    do {
+                        System.out.println("¿Cómo lo quieres rellenar?\n"
+                                + "------------------------\n"
+                                + "1.Con una cantidad específica.\n"
+                                + "2.Entero.");
+                        opcion = teclado.nextInt();
+                    } while (!(opcion == 1 || opcion == 2));
+                } catch (InputMismatchException ime) {
+                    // Imprimo por pantalla un mensaje que le recomienda utilizar números
+                    System.out.println("Ese valor no es un número... prueba con un número.");
+                }
+                // Después del bucle haré un switch
+                switch (opcion) {
+                    // En el primer caso rellenará una cantidad específica el depósito del caso 1 del anterior bucle
+                    // en el que pregunta que depósito quiere utilizar.
+                    case 1:
+                        System.out.println("¿Cúanto?");
+                        int cantidad = teclado.nextInt();
+                        try {
+                            cafetera.getDepositoDescafeinado().rellenarCantidad(cantidad);
+                        } catch (IllegalArgumentException iae) {
+                            System.out.println("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+                        }
+                        break;
+
+                    // En el primer caso rellenará entero el depósito del caso 1 del anterior bucle en el que 
+                    // pregunta que depósito quiere utilizar.
+                    case 2:
+                        cafetera.getDepositoDescafeinado().rellenarEntero();
+                        break;
+                }
+                break;
+            case 3:
+                // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+                try {
+                    // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+                    do {
+                        System.out.println("¿Cómo lo quieres rellenar?\n"
+                                + "------------------------\n"
+                                + "1.Con una cantidad específica.\n"
+                                + "2.Entero.");
+                        opcion = teclado.nextInt();
+                    } while (!(opcion == 1 || opcion == 2));
+                } catch (InputMismatchException ime) {
+                    // Imprimo por pantalla un mensaje que le recomienda utilizar números
+                    System.out.println("Ese valor no es un número... prueba con un número.");
+                }
+                // Después del bucle haré un switch
+                switch (opcion) {
+                    // En el primer caso rellenará una cantidad específica el depósito del caso 1 del anterior bucle
+                    // en el que pregunta que depósito quiere utilizar.
+                    case 1:
+                        System.out.println("¿Cúanto?");
+                        int cantidad = teclado.nextInt();
+                        try {
+                            cafetera.getDepositoChocolate().rellenarCantidad(cantidad);
+                        } catch (IllegalArgumentException iae) {
+                            System.out.println("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+                        }
+                        break;
+
+                    // En el primer caso rellenará entero el depósito del caso 1 del anterior bucle en el que 
+                    // pregunta que depósito quiere utilizar.
+                    case 2:
+                        cafetera.getDepositoChocolate().rellenarEntero();
+                        break;
+                }
+                break;
+            case 4:
+                // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+                try {
+                    // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+                    do {
+                        System.out.println("¿Cómo lo quieres rellenar?\n"
+                                + "------------------------\n"
+                                + "1.Con una cantidad específica.\n"
+                                + "2.Entero.");
+                        opcion = teclado.nextInt();
+                    } while (!(opcion == 1 || opcion == 2));
+                } catch (InputMismatchException ime) {
+                    // Imprimo por pantalla un mensaje que le recomienda utilizar números
+                    System.out.println("Ese valor no es un número... prueba con un número.");
+                }
+                // Después del bucle haré un switch
+                switch (opcion) {
+                    // En el primer caso rellenará una cantidad específica el depósito del caso 1 del anterior bucle
+                    // en el que pregunta que depósito quiere utilizar.
+                    case 1:
+                        System.out.println("¿Cúanto?");
+                        int cantidad = teclado.nextInt();
+                        try {
+                            cafetera.getDepositoLeche().rellenarCantidad(cantidad);
+                        } catch (IllegalArgumentException iae) {
+                            System.out.println("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+                        }
+                        break;
+
+                    // En el primer caso rellenará entero el depósito del caso 1 del anterior bucle en el que 
+                    // pregunta que depósito quiere utilizar.
+                    case 2:
+                        cafetera.getDepositoLeche().rellenarEntero();
+                        break;
+                }
+                break;
+            case 5:
+                // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+                try {
+                    // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+                    do {
+                        System.out.println("¿Cómo lo quieres rellenar?\n"
+                                + "------------------------\n"
+                                + "1.Con una cantidad específica.\n"
+                                + "2.Entero.");
+                        opcion = teclado.nextInt();
+                    } while (!(opcion == 1 || opcion == 2));
+                } catch (InputMismatchException ime) {
+                    // Imprimo por pantalla un mensaje que le recomienda utilizar números
+                    System.out.println("Ese valor no es un número... prueba con un número.");
+                }
+                // Después del bucle haré un switch
+                switch (opcion) {
+                    // En el primer caso rellenará una cantidad específica el depósito del caso 1 del anterior bucle
+                    // en el que pregunta que depósito quiere utilizar.
+                    case 1:
+                        System.out.println("¿Cúanto?");
+                        int cantidad = teclado.nextInt();
+                        try {
+                            cafetera.getDepositoAgua().rellenarCantidad(cantidad);
+                        } catch (IllegalArgumentException iae) {
+                            System.out.println("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+                        }
+                        break;
+
+                    // En el primer caso rellenará entero el depósito del caso 1 del anterior bucle en el que 
+                    // pregunta que depósito quiere utilizar.
+                    case 2:
+                        cafetera.getDepositoAgua().rellenarEntero();
+                        break;
+                }
+                break;
+            case 6:
+                // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+                try {
+                    // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+                    do {
+                        System.out.println("¿Cómo lo quieres rellenar?\n"
+                                + "------------------------\n"
+                                + "1.Con una cantidad específica.\n"
+                                + "2.Entero.");
+                        opcion = teclado.nextInt();
+                    } while (!(opcion == 1 || opcion == 2));
+                } catch (InputMismatchException ime) {
+                    // Imprimo por pantalla un mensaje que le recomienda utilizar números
+                    System.out.println("Ese valor no es un número... prueba con un número.");
+                }
+                // Después del bucle haré un switch
+                switch (opcion) {
+                    // En el primer caso rellenará una cantidad específica el depósito del caso 1 del anterior bucle
+                    // en el que pregunta que depósito quiere utilizar.
+                    case 1:
+                        System.out.println("¿Cúanto?");
+                        int cantidad = teclado.nextInt();
+                        try {
+                            cafetera.getDepositoAzucar().rellenarCantidad(cantidad);
+                        } catch (IllegalArgumentException iae) {
+                            System.out.println("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+                        }
+                        break;
+
+                    // En el primer caso rellenará entero el depósito del caso 1 del anterior bucle en el que 
+                    // pregunta que depósito quiere utilizar.
+                    case 2:
+                        cafetera.getDepositoAzucar().rellenarEntero();
+                        break;
+                }
+                break;
+            case 7:
+                // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
+                try {
+                    // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+                    do {
+                        System.out.println("¿Cómo lo quieres rellenar?\n"
+                                + "------------------------\n"
+                                + "1.Con una cantidad específica.\n"
+                                + "2.Entero.");
+                        opcion = teclado.nextInt();
+                    } while (!(opcion == 1 || opcion == 2));
+                } catch (InputMismatchException ime) {
+                    // Imprimo por pantalla un mensaje que le recomienda utilizar números
+                    System.out.println("Ese valor no es un número... prueba con un número.");
+                }
+                // Después del bucle haré un switch
+                switch (opcion) {
+                    // En el primer caso rellenará una cantidad específica el depósito del caso 1 del anterior bucle
+                    // en el que pregunta que depósito quiere utilizar.
+                    case 1:
+                        System.out.println("¿Cúanto?");
+                        int cantidad = teclado.nextInt();
+                        try {
+                            cafetera.getDepositoSacarina().rellenarCantidad(cantidad);
+                        } catch (IllegalArgumentException iae) {
+                            System.out.println("La cantidad no puede ser negativa... espera, ¿cómo has conseguido ponerla negativa si no hay signo negativo en el panel númerico?");
+                        }
+                        break;
+
+                    // En el primer caso rellenará entero el depósito del caso 1 del anterior bucle en el que 
+                    // pregunta que depósito quiere utilizar.
+                    case 2:
+                        cafetera.getDepositoSacarina().rellenarEntero();
+                        break;
+                }
+                break;
+        }
+    }
 }
