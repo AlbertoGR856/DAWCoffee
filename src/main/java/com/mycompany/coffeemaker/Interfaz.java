@@ -5,17 +5,21 @@
  */
 package com.mycompany.coffeemaker;
 
+import java.util.Scanner;
+
 /**
  *
  * @author usuario
  */
 public class Interfaz {
-    
+
 //    private int codProducto;
 //    private int cantidadComplemento;
     private Cafetera cafetera;
     private Administracion administracion;
     private TiposBebidas bebidas;
+
+    private static Scanner teclado = new Scanner(System.in);
 
     public Interfaz(Cafetera cafetera, Administracion administracion) {
         this.cafetera = cafetera;
@@ -26,17 +30,30 @@ public class Interfaz {
         return cafetera;
     }
 
-    public void setCafetera(Cafetera cafetera) {
-        this.cafetera = cafetera;
-    }
-
     public Administracion getAdministracion() {
         return administracion;
     }
 
-    public void setAdministracion(Administracion administracion) {
-        this.administracion = administracion;
+    // Voy a hacer un menuInicial que sea el menu que se muestre cuando la máquina está en reposo
+    public void menuInicial() {
+        int solucion = 0;
+        do {
+            System.out.println("Bienvenido+\n"
+                    + "------------------------+\n"
+                    + "1.Venta de productos+\n"
+                    + "2.Administración de la cafetera");
+            solucion = teclado.nextInt();
+        } while (solucion > 0 && 3 < solucion);
+
+        switch (solucion) {
+            case 1:
+                break;
+            case 2:
+                menuAdministracion();
+                break;
+        }
+
     }
-    
-    
+
+
 }
