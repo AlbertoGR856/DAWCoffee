@@ -9,13 +9,13 @@ package com.mycompany.coffeemaker;
  *
  * @author usuario
  */
-public class Administracion {
+public class Usuario {
     // Creación de los atributos
     private int usuario;
     private int contrasenia;
 
     // Constructor parametrizado
-    public Administracion(int usuario, int contrasenia) {
+    public Usuario(int usuario, int contrasenia) {
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }

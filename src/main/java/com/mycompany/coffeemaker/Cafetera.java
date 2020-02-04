@@ -13,13 +13,13 @@ public class Cafetera {
 
     private Deposito depositoCafe, depositoAgua, depositoLeche,
             depositoDescafeinado, depositoChocolate, depositoSacarina, depositoAzucar;
-    private Administracion administracion;
+    private Usuario administracion;
     private TiposBebidas bebidas;
     private double saldoAcumulado;
     private double saldoCliente;
     private static int numVenta;
 
-    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate, Deposito depositoSacarina, Deposito depositoAzucar, Administracion administracion) {
+    public Cafetera(Deposito depositoCafe, Deposito depositoAgua, Deposito depositoLeche, Deposito depositoDescafeinado, Deposito depositoChocolate, Deposito depositoSacarina, Deposito depositoAzucar, Usuario administracion) {
         this.depositoCafe = depositoCafe;
         this.depositoAgua = depositoAgua;
         this.depositoLeche = depositoLeche;
@@ -38,7 +38,7 @@ public class Cafetera {
     }
     
 
-    public Administracion getAdministracion() {
+    public Usuario getAdministracion() {
         return administracion;
     }
 
