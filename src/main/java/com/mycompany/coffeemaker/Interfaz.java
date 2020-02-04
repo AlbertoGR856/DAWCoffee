@@ -64,6 +64,33 @@ public class Interfaz {
     private void menuVenta() {
         System.out.println("Introduce dinero: ");
         menuInicial();
+
+        int opciones = 0;
+        try {
+            // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+            do {
+                System.out.println("¿Qué quieres comprar?\n"
+                        + "Seleccione un producto\n"
+                        + "1.Cafe solo\n"
+                        + "2.Solo largo\n"
+                        + "3.Solo con leche.\n"
+                        + "4.Cafe solo descafeinado."
+                        + "5.Solo largo descafeinado."
+                        + "6.Solo con leche descafeinado."
+                        + "7.Cortado descafeinado."
+                        + "8.Cholocalte."
+                        + "9.Leche fria."
+                        + "10.Leche caliente.");
+
+                opciones = teclado.nextInt();
+            } while (!(opciones == 1 || opciones == 2 || opciones == 3 || opciones == 4
+                   || opciones == 5|| opciones == 6|| opciones == 7|| opciones == 8
+                    || opciones == 9|| opciones == 10));
+        } catch (InputMismatchException ime) {
+            // Imprimo por pantalla un mensaje que le recomienda utilizar números
+            System.out.println("Ese valor no es un número... prueba con un número.");
+        }
+
     }
 
     // Voy a hacer un menu para el administrador que será llamado desde el menú inicial.
