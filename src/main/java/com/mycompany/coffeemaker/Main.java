@@ -19,7 +19,7 @@ public class Main {
         Deposito depoAgua = new Deposito(1500, 750, 1500, "agua");
         Deposito depoSacarina = new Deposito(550, 275, 50, "sacarina");
         Deposito depoAzucar = new Deposito(550, 275, 550, "azúcar");
-        Administracion admin = new Administracion(535,51932);  
+        Usuario admin = new Usuario(535,51932);  
         Cafetera maquina = new Cafetera(depoCafe, depoAgua, depoLeche, depoDesca, depoChoco, depoSacarina, depoAzucar, admin);
         Interfaz i1 = new Interfaz(maquina);
         
