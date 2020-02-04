@@ -71,21 +71,54 @@ public class Interfaz {
             do {
                 System.out.println("¿Qué quieres comprar?\n"
                         + "Seleccione un producto\n"
-                        + "1.Cafe solo\n"
-                        + "2.Solo largo\n"
-                        + "3.Solo con leche.\n"
-                        + "4.Cafe solo descafeinado."
-                        + "5.Solo largo descafeinado."
-                        + "6.Solo con leche descafeinado."
-                        + "7.Cortado descafeinado."
-                        + "8.Cholocalte."
-                        + "9.Leche fria."
-                        + "10.Leche caliente.");
+                        + "001.Cafe solo\n"
+                        + "002.Solo largo\n"
+                        + "003.Solo con leche.\n"
+                        + "101.Cafe solo descafeinado."
+                        + "102.Solo largo descafeinado."
+                        + "103.Solo con leche descafeinado."
+                        + "104.Cortado descafeinado."
+                        + "201.Cholocalte."
+                        + "301.Leche fria."
+                        + "302.Leche caliente.");
 
                 opciones = teclado.nextInt();
-            } while (!(opciones == 1 || opciones == 2 || opciones == 3 || opciones == 4
-                   || opciones == 5|| opciones == 6|| opciones == 7|| opciones == 8
-                    || opciones == 9|| opciones == 10));
+            } while (!(opciones == 001 || opciones == 002 || opciones == 003 || opciones == 101
+                    || opciones == 102 || opciones == 103 || opciones == 104 || opciones == 201
+                    || opciones == 301 || opciones == 302));
+        } catch (InputMismatchException ime) {
+            // Imprimo por pantalla un mensaje que le recomienda utilizar números
+            System.out.println("Ese valor no es un número... prueba con un número.");
+        }
+
+        int complemento = 0;
+        try {
+            // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+            do {
+                System.out.println("¿Qué complemento quieres para el producto?\n"
+                        + "Seleccione un complemento\n"
+                        + "1.Azucar\n"
+                        + "2.Sacarina\n");
+
+                complemento = teclado.nextInt();
+            } while (!(complemento == 1 || complemento == 2));
+        } catch (InputMismatchException ime) {
+            // Imprimo por pantalla un mensaje que le recomienda utilizar números
+            System.out.println("Ese valor no es un número... prueba con un número.");
+        }
+
+        int cantidadComplemento = 0;
+        try {
+            // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+            do {
+                System.out.println("¿Qué cantidad quieres?\n"
+                        + "Seleccione una cantidad\n"
+                        + "0.Ninguna\n"
+                        + "1.Poco\n"
+                        + "2.Mucha.\n");
+
+                cantidadComplemento = teclado.nextInt();
+            } while (!(cantidadComplemento == 1 || cantidadComplemento == 2 || cantidadComplemento == 3));
         } catch (InputMismatchException ime) {
             // Imprimo por pantalla un mensaje que le recomienda utilizar números
             System.out.println("Ese valor no es un número... prueba con un número.");
