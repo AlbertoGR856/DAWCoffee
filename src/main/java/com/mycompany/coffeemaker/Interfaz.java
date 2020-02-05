@@ -63,37 +63,37 @@ public class Interfaz {
     // Voy a hacer un menu para las ventas que será llamado desde el menú inicial.
     private void menuVenta() {
         System.out.println("Introduce dinero: ");
-        menuInicial();
+//        menuInicial();
 
         int opciones = 0;
         try {
-            // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+            // Hago un bucle para que el usuario escoja una de las opciones para comprar un producto. 
             do {
                 System.out.println("¿Qué quieres comprar?\n"
                         + "Seleccione un producto\n"
                         + "001.Cafe solo\n"
                         + "002.Solo largo\n"
                         + "003.Solo con leche.\n"
-                        + "101.Cafe solo descafeinado."
-                        + "102.Solo largo descafeinado."
-                        + "103.Solo con leche descafeinado."
-                        + "104.Cortado descafeinado."
-                        + "201.Cholocalte."
-                        + "301.Leche fria."
-                        + "302.Leche caliente.");
+                        + "101.Cafe solo descafeinado.\n"
+                        + "102.Solo largo descafeinado.\n"
+                        + "103.Solo con leche descafeinado.\n"
+                        + "104.Cortado descafeinado.\n"
+                        + "201.Cholocalte.\n"
+                        + "301.Leche fria.\n"
+                        + "302.Leche caliente.\n");
 
                 opciones = teclado.nextInt();
             } while (!(opciones == 001 || opciones == 002 || opciones == 003 || opciones == 101
                     || opciones == 102 || opciones == 103 || opciones == 104 || opciones == 201
                     || opciones == 301 || opciones == 302));
         } catch (InputMismatchException ime) {
-            // Imprimo por pantalla un mensaje que le recomienda utilizar números
+            // Se imprime por pantalla un mensaje que le indique que ese valor numerico es erroneo y que debe probar con otro
             System.out.println("Ese valor no es un número... prueba con un número.");
         }
 
         int complemento = 0;
         try {
-            // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+            // Hago un bucle para que el usuario escoja uno de los complementos a elegir
             do {
                 System.out.println("¿Qué complemento quieres para el producto?\n"
                         + "Seleccione un complemento\n"
@@ -103,13 +103,13 @@ public class Interfaz {
                 complemento = teclado.nextInt();
             } while (!(complemento == 1 || complemento == 2));
         } catch (InputMismatchException ime) {
-            // Imprimo por pantalla un mensaje que le recomienda utilizar números
+            // Se imprime por pantalla un mensaje que le indique que ese valor numerico es erroneo y que debe probar con otro
             System.out.println("Ese valor no es un número... prueba con un número.");
         }
 
         int cantidadComplemento = 0;
         try {
-            // Hago un bucle para que el usuario escoja una de las opciones que se muestran en el System.out.println
+            // Hago un bucle para que el usuario escoja una de las cantidades a elegir.
             do {
                 System.out.println("¿Qué cantidad quieres?\n"
                         + "Seleccione una cantidad\n"
@@ -120,10 +120,23 @@ public class Interfaz {
                 cantidadComplemento = teclado.nextInt();
             } while (!(cantidadComplemento == 1 || cantidadComplemento == 2 || cantidadComplemento == 3));
         } catch (InputMismatchException ime) {
-            // Imprimo por pantalla un mensaje que le recomienda utilizar números
+            // Se imprime por pantalla un mensaje que le indique que ese valor numerico es erroneo y que debe probar con otro
             System.out.println("Ese valor no es un número... prueba con un número.");
         }
 
+    }
+
+    private void efectuarCompra() {
+        Double cafeSolo= (TiposBebidas.CAFE_SOLO.getPrecio()) - cafetera.getSaldoCliente();
+        Double soloLargo = (TiposBebidas.SOLO_LARGO.getPrecio()) - cafetera.getSaldoCliente();
+        Double soloLeche = (TiposBebidas.SOLO_CON_LECHE.getPrecio()) - cafetera.getSaldoCliente();
+        Double cafeSoloDescafeinado = (TiposBebidas.CAFE_SOLO_DESCAFEINADO.getPrecio()) - cafetera.getSaldoCliente();
+        Double soloLargoDescafeinado = (TiposBebidas.SOLO_LARGO_DESCAFEINADO.getPrecio()) - cafetera.getSaldoCliente();
+        Double soloLecheDescafeinado = (TiposBebidas.SOLO_CON_LECHE_DESCAFEINADO.getPrecio()) - cafetera.getSaldoCliente();
+        Double cortoDescafeinado = (TiposBebidas.CORTADO_DESCAFEINADO.getPrecio()) - cafetera.getSaldoCliente();
+        Double chocolate = (TiposBebidas.CHOCOLATE.getPrecio()) - cafetera.getSaldoCliente();
+        Double lecheFria = (TiposBebidas.LECHE_FRIA.getPrecio()) - cafetera.getSaldoCliente();
+        Double lecheCaliente = (TiposBebidas.LECHE_CALIENTE.getPrecio()) - cafetera.getSaldoCliente();
     }
 
     // Voy a hacer un menu para el administrador que será llamado desde el menú inicial.
@@ -190,18 +203,18 @@ public class Interfaz {
             // Hago un switch que dependiendo de la opcion que haya escogido el usuario, haga una cosa u otra.
             switch (opcion) {
                 case 1:
-                    menuAdministracionOpcion1();
+                    ComprobarDeposito();
                     break;
 
                 // En esta opción mostrará el estado actual de los depósitos y el usuario y contraseña del administrador.
                 case 2:
-                    menuAdministracionOpcion2();
+                    comprobarEstado();
                     break;
                 case 3:
                     System.out.println("Se han realizado un total de " + cafetera.getNumVenta() + " ventas y se ha recaudado un total de " + cafetera.getSaldoAcumulado() + "€.");
                     break;
                 case 4:
-                    menuAdministracionOpcion4();
+                    rellenarDepositos();
                     break;
             }
             menuInicial();
@@ -210,7 +223,7 @@ public class Interfaz {
         }
     }
 
-    private void menuAdministracionOpcion1() {
+    private void ComprobarDeposito() {
         String cafe = (cafetera.getDepositoCafe().indicador()) ? ("El depósito " + cafetera.getDepositoCafe().getNombre() + " debe ser rellenado.") : "";
         String descafeinado = (cafetera.getDepositoDescafeinado().indicador()) ? ("\nEl depósito " + cafetera.getDepositoDescafeinado().getNombre() + " debe ser rellenado.") : "";
         String chocolate = (cafetera.getDepositoChocolate().indicador()) ? ("\nEl depósito " + cafetera.getDepositoChocolate().getNombre() + " debe ser rellenado.") : "";
@@ -227,7 +240,7 @@ public class Interfaz {
         }
     }
 
-    private void menuAdministracionOpcion2() {
+    private void comprobarEstado() {
         System.out.println(cafetera.getAdministracion().toString());
         System.out.println(cafetera.getDepositoAgua().toString());
         System.out.println(cafetera.getDepositoAzucar().toString());
@@ -238,7 +251,7 @@ public class Interfaz {
         System.out.println(cafetera.getDepositoSacarina().toString());
     }
 
-    private void menuAdministracionOpcion4() {
+    private void rellenarDepositos() {
         int opcion = 0;
         // Hago un try catch por si el usuario introduce algún tipo de dato que no es válido.
         try {
